@@ -16,11 +16,13 @@ Including another URLconf
 
 from django.conf.urls import url, include
 from django.contrib import admin
-
+#from . import views
+app_name="refugio"
 #from mascota import views
 #from adopcion import views
 #from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+ #   url(r'^mascota/', include('apps.mascota.urls')),
     url(r'^', include('apps.mascota.urls')),
 ]
