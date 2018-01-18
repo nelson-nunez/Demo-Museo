@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+ 
+{% block encabezado %}Listado de Personas{% endblock %}
+			
+			
+{% block content %} 
+	<h4>Lista de Personillas </h4>  
+
+
+<ul class="collapsible" data-collapsible="accordion">
+
+	{% for persona in personas  %}
+		    <li>
+			    <div class="collapsible-header">
+				      	<span class="title">{{persona.nombre}}, {{persona.email}}</span>
+			    </div>
+			    <div class="collapsible-body">
+ 			      	<span>{{persona.domicilio}}</span>
+			  	</div>
+		    </li>
+	{% endfor %}
+	</ul>
+
+{% endblock %}

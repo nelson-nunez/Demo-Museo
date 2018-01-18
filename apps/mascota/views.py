@@ -15,11 +15,17 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.platypus import Table
+#-----------------------------------------------------
+
+
+
+#-----------------------------------------------------
 
 def index (request):
 	return HttpResponse("Index")
+#-----------------------------------------------------
 
-
+#-----------------------------------------------------
 
 class ReportePersonasPDF2(View):
 
@@ -52,7 +58,6 @@ class ReportePersonasPDF2(View):
         response.write(pdf)
         return response
 
-#-----------------------------------------------------
 
     def tabla(self,pdf,y):
         #Creamos una tupla de encabezados para neustra tabla
@@ -99,3 +104,5 @@ class ReportePersonasPDF2(View):
         buffer.close()
         response.write(pdf)
         return response
+
+#-----------------------------------------------------
