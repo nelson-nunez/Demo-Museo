@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block encabezado %} Inscripción {% endblock %}
+
+{% block content %} 
+  <!-- inicio contenedor principal -->
+  <div class="container">
+    <!-- inicio row  -->
+    <div class="row">
+      <div class="col s12">
+       <div class="card-panel grey center-align">
+          <span class="white-text"><strong>Agregue Datos de una nueva Pieza</strong> 
+          </span>
+        </div>       
+      </div>
+
+    </div>
+    
+    <!-- INICIO FORMULARIO  -->
+    <div class="row">
+    <form class="col s12" method="POST">
+      {% csrf_token %}
+      <h5>Datos del Dueño</h5>      
+      {{ formPersona.as_p }}
+	  <h5>Datos de la pieza</h5>      
+      {{ formPiezas.as_p }}
+  
+      <div class="row"> <!-- row para los botones de abajo -->
+
+        <div class="col s12  center-align">
+
+          <button action="/campaing/home_admin/" type="submit" class="waves-effect waves-light accent-2 btn-large "><i class="material-icons left">assignment</i></i>Cargar
+          </button>
+        </div>
+
+      </div>              
+    </form>
+  </div>
+             <!-- FIN FORMULARIO  -->
+  </div>
+  <!-- fin contenedor principal -->
+
+{% endblock %}
+
+{% block extra_js %}
+  <!-- Para que funcione el select  -->
+  <script>
+  $(document).ready(function() {
+      $('select').material_select();
+    });
+  </script>
+
+{% endblock %}

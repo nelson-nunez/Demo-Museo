@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block encabezado %}Búsqueda de Piezas{% endblock %}
+
+{% block content %}
+
+
+	<div class="col s12 separador ">
+		
+	</div>
+
+
+	<form action="" method="post">
+
+
+		<div class="col s8">
+			
+		{% csrf_token %}
+		{{ form }}
+		</div>
+
+		<div class="col s4 right-align">
+			<button type="submit" class="waves-effect waves-light accent-2 btn-large"><i class="material-icons left">search</i>Buscar</button>	
+		</div>
+
+	</form>
+
+
+	<div class="col s12 m6">
+		<p class="center-align">
+			<a href="/ver_piezas" class="waves-effect waves-light btn-large center-align"><i class="material-icons left">content_paste</i>Inventario de Piezas</a>
+		</p>
+	</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block encabezado %}Resultados{% endblock %}
+
+{% block content %}
+<h5>Se encontraron: {{ query }}</h5>
+
+
+
+<ul class="collapsible" data-collapsible="accordion">
+	{% for piezas in piezas  %}
+		    <li>
+			    <div class="collapsible-header">
+				      	<span class="title"> {{piezas.nombre}} -  {{piezas.nombre_cientifico}}</span>
+			    </div>
+			    <div class="collapsible-body">
+ 			      	<span>Aportada por: {{piezas.persona.nombre}}</span>
+			  	</div>
+		    </li>
+	{% endfor %}
+	</ul>
+
+<a href="/buscar_piezas/" class="waves-effect waves-light btn-large "><i class="material-icons left">search</i>Buscar Otro</a>
+
+{% endblock %}
